@@ -8,8 +8,9 @@
                 <div class="card mt-4">
                     <div class="card-header">
                         <h4>Giao diện admin
-                            <a href="duyetbai.php" class="btn btn-primary float-end">Quản lý bài viết</a>
+                            <a href="duyetbai.php" class="btn btn-primary float-end">Duyệt bài viết</a>
                             <a href="account.php" class="btn btn-primary float-end">Quản lý tài khoản</a>
+                            <a href="comment.php" class="btn btn-primary float-end">Quản lý bình luận</a>
                         </h4>
                     </div>
                 </div>

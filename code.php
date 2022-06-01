@@ -2,7 +2,6 @@
     session_start();
     include('dbconnect.php');
 
-
     //them tai khoan
     if(isset($_POST['save_account'])){
         $username=$_POST['username'];
@@ -61,6 +60,21 @@
         }else{
             $_SESSION['status'] = "Xoá thất bại";
             header("Location: account.php");
+        }
+    }
+
+    //duyet bai duyetbai
+    if(isset($_POST['duyetbai'])){
+        $id=$_POST['id_key_duyet'];
+        $status=$_POST['status'];
+        $duyetpost=[
+            'status' =>true,
+        ];
+        $ref_table="post/".$id;
+        $duyetpostquery=$database->getReference($ref_table)->update($duyetpost);
+        if($duyetpost){
+            $_SESSION['status'] = "Duyệt bài thành công";
+            header("Location: duyetbai.php");
         }
     }
 ?>
