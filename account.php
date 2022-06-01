@@ -6,6 +6,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+
                 <div class="card mt-4">
                     <div class="card-header">
                         <h4>Giao diện admin
@@ -14,6 +15,12 @@
                         <a href="account_add.php" class="btn btn-primary float-end">Thêm tài khoản nhân viên</a>
                         </h4>
                     </div>
+                    <?php
+                            if(isset($_SESSION['status'])){
+                                echo "<h4>".$_SESSION['status']."</h4>";
+                                unset($_SESSION['status']);
+                            }
+                        ?>
                     <div class="card-body">
                         <table class="table table-bordered">
                             <thead>
@@ -22,6 +29,8 @@
                                     <th>Password</th>
                                     <th>Email</th>
                                     <th>Level</th>
+                                    <th>Sửa</th>
+                                    <th>Xóa</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -42,8 +51,14 @@
                                                 <td><?=$row['email'];?></td>
                                                 <td><?=$row['level'];?></td>
                                                 <td>
-                                                    <a href="editaccount.php" class="btn btn-success">Sửa</a>
-                                                    <a href="deleteaccount.php" class="btn btn-danger">Xóa</a>
+                                                    <a href="editaccount.php?id=<?=$key; ?>" class="btn btn-success">Sửa</a>
+                                                </td>
+                                                <td>
+                                                    <!-- <a href="deleteaccount.php?id=<?=$key; ?>" class="btn btn-danger">Xóa</a> -->
+                                                    <form action="code.php" method="POST">
+                                                        <input type="hidden" name="id_key" value="<?=$key;?>">
+                                                        <button type="submit" name="delete_account" class="btn btn-danger">Xóa</button>
+                                                    </form>
                                                 </td>
                                             </tr>
                                             <?php

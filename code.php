@@ -1,7 +1,10 @@
 <?php
-    include('dbconnect.php');
     session_start();
-    if(isset($_POST['save'])){
+    include('dbconnect.php');
+
+
+    //them tai khoan
+    if(isset($_POST['save_account'])){
         $username=$_POST['username'];
         $password=$_POST['password'];
         $email=$_POST['email'];
@@ -21,5 +24,43 @@
     }else{
         $_SESSION['status'] = "Thêm thất bại";
         header("Location: account.php");
+    }
+
+    //sua taikhoan
+    if(isset($_POST['update_account'])){
+        $id=$_POST['id'];
+        $username=$_POST['username'];
+        $password=$_POST['password'];
+        $email=$_POST['email'];
+        $level=1;
+        $update_account_data=[
+            'username' =>$username,
+            'password' =>$password,
+            'email' =>$email,
+            'level' =>$level,
+        ];
+        $ref_table="Account/".$id;
+        $update_account_query=$database->getReference($ref_table)->update($update_account_data);
+        if($update_account_query){
+            $_SESSION['status'] = "Sửa  thành công";
+            header("Location: account.php");
+        }else{
+            $_SESSION['status'] = "Sửa thất bại";
+            header("Location: account.php");
+        }
+    }
+
+    //Xoa taikhoan
+    if(isset($_POST['delete_account'])){
+        $id=$_POST['id_key'];
+        $ref_table="Account/".$id;
+        $delete_account=$database->getReference($ref_table)->remove();
+        if($delete_account){
+            $_SESSION['status'] = "Xóa  thành công";
+            header("Location: account.php");
+        }else{
+            $_SESSION['status'] = "Xoá thất bại";
+            header("Location: account.php");
+        }
     }
 ?>

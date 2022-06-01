@@ -36,8 +36,8 @@
                                         <input type="email" name="email" class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <label for="">Lưu</label>
-\                                       <button type="submit" name="save" class="btn btn-primary">Lưu</button>
+                                        <label for="save_account"></label>
+                                       <button type="submit" name="save_account" class="btn btn-primary">Lưu</button>
                                     </div>
                                 </form>
                             </div>
