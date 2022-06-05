@@ -15,10 +15,8 @@ if (isset($_POST["sbLogin"])) {
     // $password = strip_tags($password);
     // $password = addslashes($password);
 
-    $ref_table="Account/".$mail;
-    echo $ref_table;
+    $ref_table="Account/";
     $fetchdata=$database->getReference($ref_table)->getValue();
-    if($fetchdata>0){
         foreach($fetchdata as $key=>$row){
             // $_SESSION['username'] = $row['email'];
             // $_SESSION['level'] = $row['level'];
@@ -30,14 +28,17 @@ if (isset($_POST["sbLogin"])) {
             //     header('Location: login.php');
             // }
             //  echo ' '+$row['level'];
-            if($row['email'] == "admin@gmail.com" && $row['level'] == "0")
+            echo $row['email'];
+            if($row['email'] == $mail && $row['level'] == "0" && $row['password'] == $password)
             {
-                header('Location: adminpage.php');
+                header("Location: adminpage.php");
             }
             else{
-                header('Location: login.php');
+                header("Location: login.php");
             }
-    }}}
+    }}
+
+    
 ?>
 
 
