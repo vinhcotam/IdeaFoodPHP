@@ -7,11 +7,12 @@
             <div class="col-md-12">
                 <div class="card mt-4">
                     <div class="card-header">
-                        <h4>Giao diện admin
-                            <a href="duyetbai.php" class="btn btn-primary float-end">Duyệt bài viết</a>
-                            <a href="account.php" class="btn btn-primary float-end">Quản lý tài khoản</a>
-                            <a href="comment.php" class="btn btn-primary float-end">Quản lý bình luận</a>
-                        </h4>
+                        <center>
+                            <h3>GIAO DIỆN ADMIN</h3>
+                            <br> <a href="duyetbai.php" class="btn btn-primary" style="margin: 10%;">Duyệt bài viết</a>
+                            <br> <a href="account.php" class="btn btn-primary">Quản lý tài khoản</a>
+                            <br> <a href="comment.php" class="btn btn-primary">Quản lý bình luận</a>
+                        </center>
                     </div>
                 </div>
             </div>

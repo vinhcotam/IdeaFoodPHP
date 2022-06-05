@@ -6,7 +6,7 @@
         $username=$_POST['username'];
         $password=$_POST['password'];
         $email=$_POST['email'];
-        $level=1;
+        $level="1";
         $account_data=[
             'username' =>$username,
             'password' =>$password,
@@ -76,4 +76,19 @@
             header("Location: duyetbai.php");
         }
     }
+
+    //Xoa taikhoan
+    if(isset($_POST['delete_comment'])){
+        $id=$_POST['id_an'];
+        $ref_table="comments/".$id;
+        $delete_account=$database->getReference($ref_table)->remove();
+        if($delete_account){
+            $_SESSION['status'] = "Xóa  thành công";
+            header("Location: comment.php");
+        }else{
+            $_SESSION['status'] = "Xoá thất bại";
+            header("Location: comment.php");
+        }
+    }
+
 ?>
