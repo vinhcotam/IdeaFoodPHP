@@ -25,7 +25,7 @@
                         <div class="card" style="border-radius: 10px;">
                             <div class="card-body p-5">
                                 <h2 class="text-uppercase text-center mb-5">Đăng nhập</h2>
-                                <form action="checkpass.php" method="POST">
+                                <form action="Process_login.php" method="POST">
                                     <div class="form-outline mb-2">
                                     <label class="form-label" for="txtEmail">Nhập email</label>
                                         <input type="email" id="txtEmail" name="txtEmail" class="form-control form-control-lg" />

@@ -1,7 +1,6 @@
 <?php
     session_start();
     include('dbconnect.php');
-
     //them tai khoan
     if(isset($_POST['save_account'])){
         $username=$_POST['username'];
