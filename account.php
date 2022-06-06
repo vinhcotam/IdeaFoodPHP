@@ -9,11 +9,11 @@
 
                 <div class="card mt-4">
                     <div class="card-header">
-                        <h4>Giao diện admin
+                        <h3>Quản lý tài khoản
                         
-                        <a href="adminpage.php" class="btn btn-danger float-end">Quay lại</a>
+                        <a href="index.php" class="btn btn-danger float-end">Quay lại</a>
                         <a href="account_add.php" class="btn btn-primary float-end">Thêm tài khoản nhân viên</a>
-                        </h4>
+                        </h3>
                     </div>
                     <?php
                             if(isset($_SESSION['status'])){
