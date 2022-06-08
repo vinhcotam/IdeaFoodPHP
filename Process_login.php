@@ -8,35 +8,32 @@ if (isset($_POST["sbLogin"])) {
     // lấy thông tin người dùng
     $mail = $_POST["txtEmail"];
     $password = $_POST["txtPass"];
-    //làm sạch thông tin, xóa bỏ các tag html, ký tự đặc biệt 
-    //mà người dùng cố tình thêm vào để tấn công theo phương thức sql injection
-    // $username = strip_tags($username);
-    // $username = addslashes($username);
-    // $password = strip_tags($password);
-    // $password = addslashes($password);
-
+    if($mail=="" ||$password==""){
+        echo '<script language="javascript">';
+        echo 'alert("Bạn chưa nhập tài khoản hoặc mật khẩu"); window.location="index.php"';
+        echo '</script>';
+    }
     $ref_table="Account/";
     $fetchdata=$database->getReference($ref_table)->getValue();
         foreach($fetchdata as $key=>$row){
-            // $_SESSION['username'] = $row['email'];
-            // $_SESSION['level'] = $row['level'];
-
-            // if($row['level'] == 0){
-            //     header('Location: adminpage.php');}
-            // else
-            // {
-            //     header('Location: login.php');
-            // }
-            //  echo ' '+$row['level'];
             echo $row['email'];
-            if($row['email'] == $mail && $row['level'] == "0" && $row['password'] == $password)
+            if($row['email'] == $mail && $row['password'] == $password)
             {
-                header("Location: adminpage.php");
-            }
+                    if($row['level'] == "0"){
+                        header("Location: index1.php");
+                    }else if($row['level'] == "1" ||$row['level'] == "2"){
+                        echo '<script language="javascript">';
+                        echo 'alert("Bạn không có quyền truy cập"); window.location="index.php"';
+                        echo '</script>';
+                    }
+            }  
             else{
-                header("Location: login.php");
+                echo '<script language="javascript">';
+                echo 'alert("Bạn đã nhập sai mật khẩu"); window.location="index.php"';
+                echo '</script>';
             }
-    }}
+    }
+}
 
     
 ?>
