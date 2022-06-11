@@ -1,5 +1,5 @@
 <?php
-    include('header.php');
+    include('header1.php');
 ?>
 
 <body>
@@ -41,9 +41,39 @@
                         <center>
                           
                             <h1 style="margin: 5%; font-weight:bold">GIAO DIỆN ADMIN</h1>
-                            <br> <a href="duyetbai.php" class="btn btn-primary" style="margin: 5%;">Duyệt bài viết</a>
-                            <br> <a href="account.php" class="btn btn-primary" style="margin: 5%;">Quản lý tài khoản</a>
-                            <br> <a href="comment.php" class="btn btn-primary" style="margin: 5%;">Quản lý bình luận</a>
+                            <br>
+                             <a href="duyetbai.php">
+                                  <div class="box">
+                                      <div class="icon"><i class="bi bi-cloud-arrow-up-fill"></i></div>
+                                      <div class="content">
+                                          <br>
+                                          <span>Duyệt bài viết</span>
+                                      </div>
+                                  </div>
+                              </a>
+                             <!-- <a href="duyetbai.php" class="btn btn-primary" style="margin: 5%;">Duyệt bài viết</a> -->
+                            <br> 
+                            <a href="account.php">
+                                  <div class="box">
+                                      <div class="icon"><i class="bi bi-github"></i></div>
+                                      <div class="content">
+                                          <br>
+                                          <span>Quản lý tài khoản</span>
+                                      </div>
+                                  </div>
+                              </a>
+                            <!-- <a href="account.php" class="btn btn-primary" style="margin: 5%;">Quản lý tài khoản</a> -->
+                            <br> 
+                            <a href="comment.php">
+                                  <div class="box">
+                                      <div class="icon"><i class="bi bi-chat-square-dots-fill"></i></div>
+                                      <div class="content">
+                                          <br>
+                                          <span>Quản lý bình luận</span>
+                                      </div>
+                                  </div>
+                              </a>
+                            <!-- <a href="comment.php" class="btn btn-primary" style="margin: 5%;">Quản lý bình luận</a> -->
                         </center>
                     </div>
                 </div>

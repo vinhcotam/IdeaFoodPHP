@@ -11,7 +11,7 @@
                     <div class="card-header">
                         <h4>Duyệt bài viết
                         
-                        <a href="index.php" class="btn btn-danger float-end">Quay lại</a>
+                        <a href="index1.php" class="btn btn-danger float-end">Quay lại</a>
                         </h4>
                     </div>
                     <?php

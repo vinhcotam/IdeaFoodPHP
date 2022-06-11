@@ -11,7 +11,7 @@
                     <div class="card-header">
                         <h3>Quản lý tài khoản
                         
-                        <a href="index.php" class="btn btn-danger float-end">Quay lại</a>
+                        <a href="index1.php" class="btn btn-danger float-end">Quay lại</a>
                         <a href="account_add.php" class="btn btn-primary float-end">Thêm tài khoản nhân viên</a>
                         </h3>
                     </div>
