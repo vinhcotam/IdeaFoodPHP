@@ -29,10 +29,10 @@ if (isset($_POST["sbLogin"])) {
                     }
             }else{
                 echo '<script language="javascript">';
-                echo 'alert("Bạn đã nhập sai mật khẩu"); window.location="index.php"';
+                echo 'alert("Bạn đã nhập sai taì khoản hoặc mật khẩu"); window.location="index.php"';
                 echo '</script>';
             }   
-            }
+        }
     }
 //     if ($dungtaikhoan == false){
 //         echo '<script language="javascript">';
